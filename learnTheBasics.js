@@ -503,18 +503,18 @@ public class learnTheBasics {
 
 
 
-        public int reverse(int x) {
-    
-        int n=x;
-        // count = 0;
-        int rev=0;
-        while(n!=0){
-            int lastDig= n%10;
-            rev= rev*10+lastDig;
-            n= n/10;
+    public int reverse(int x) {
 
-        }
-        return rev; 
+    int n=x;
+    // count = 0;
+    int rev=0;
+    while(n!=0){
+        int lastDig= n%10;
+        rev= rev*10+lastDig;
+        n= n/10;
+
+    }
+    return rev; 
     
     }
     
@@ -544,5 +544,86 @@ public class learnTheBasics {
 		}
 	}
     
+
+
+
+
+    public boolean isPalindrome(int n) {
+        int x=n;
+		// int n=x;/
+        // count = 0;
+        int rev=0;
+        if (n<0){
+            return false;
+        }
+        while(n!=0){
+            int lastDig= n%10;
+            rev= rev*10+lastDig;
+            n= n/10;
+
+
+        }
+		if (rev == x){
+			return true;
+		}
+		else{
+			return false;
+		}
+    }
+
+
+
+
+
+
+    public static int calcGCD(int n, int m){
+        // Write your code here.
+        int div =1;
+        for (int i =1;i<=Math.min(n,m);i++){
+            if ((n%i==0) && (m%i == 0)){
+                div =  i;
+            }
+        }
+        return div;
+    }
+
+
+
+
+    public static void main(String[] args) {
+    // Write your code here
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int x=n;
+    // int count =0;
+    int numDig =(int) Math.log10(x)+1;
+    
+    int sum =0 ;
+    while (x > 0) {
+        int last = x % 10;
+        int num =(int) Math.pow(last,numDig); 
+        sum = sum+num; 
+        x=x/10;
+    }
+
+    
+    if( sum == n ){
+        System.out.print("true");
+    }
+    else{
+        System.out.print("false");
+    }
+    
+
+    }
+    
+
+
+
+
+
+
+
+
     
 }
