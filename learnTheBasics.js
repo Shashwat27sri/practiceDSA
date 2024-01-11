@@ -440,4 +440,109 @@ public class learnTheBasics {
         }
 
     }
+
+
+
+
+    public static int countDigits(int n){
+        int x=n;
+        int count = 0 ;
+        while(x>0){
+            int rem = x%10;
+            x=x/10;
+            if (rem ==0){
+                continue;
+
+            }if(n%rem==0){
+                count++;
+            }
+            
+
+        }
+        return count;
+    }
+
+
+
+
+    public static long reverseBits(long n) {
+
+        long arr[]=new long[32];
+
+        int count=0;
+
+        while(n!=0){
+
+            long rem=n%2;
+
+            arr[count]=rem;
+
+            n/=2;
+
+            count++;
+
+        }
+
+        count=0;
+
+        long result=0;
+
+        for(int i=31; i>=0; i--){
+
+            result+=(long)Math.pow(2,count)*arr[i];
+
+            count++;
+
+        }
+
+        return result;
+
+    }
+
+
+
+
+
+        public int reverse(int x) {
+    
+        int n=x;
+        // count = 0;
+        int rev=0;
+        while(n!=0){
+            int lastDig= n%10;
+            rev= rev*10+lastDig;
+            n= n/10;
+
+        }
+        return rev; 
+    
+    }
+    
+
+
+
+    public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int x=n;
+		// int n=x;/
+        // count = 0;
+        int rev=0;
+        while(n!=0){
+            int lastDig= n%10;
+            rev= rev*10+lastDig;
+            n= n/10;
+
+
+        }
+		if (rev == x){
+			System.out.print("true");
+		}
+		else{
+			System.out.print("false");
+		}
+	}
+    
+    
 }
