@@ -625,5 +625,37 @@ public class learnTheBasics {
 
 
 
-    
+    public static String isPrime(int n) {
+        if (n <= 1) {
+            return "NO"; 
+        }
+
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return "NO";  
+            }
+        }
+
+        return "YES";  
+    }
+
+
+
+
+    public static int sumOfAllDivisors(int n){
+        // Write your code here.
+        int ans=0;
+
+        for(int i=1;i<=n;i++)
+
+        {
+
+        ans+=(n/i)*i;   // this formula to find the divisors (N/i)*i 
+
+        }
+
+        return ans;
+
+        
+    }
 }
