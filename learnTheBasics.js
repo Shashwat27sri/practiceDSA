@@ -711,4 +711,27 @@ public class learnTheBasics {
         return print(l,n);
 
     }
+
+
+
+
+
+
+    public static int[] print( int[] arr , int x, int idx){
+        // int val = 1;
+        if(x>0){
+            arr[idx] = x;
+            print(arr , x-1,idx+1);
+        }
+        return arr; 
+    }
+    
+    
+
+    public static int[] printNos(int x) {
+        // Write Your Code Here
+        int arr[]= new int[x];
+        return print(arr , x,0);
+
+    }
 }
