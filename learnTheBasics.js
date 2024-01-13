@@ -674,4 +674,32 @@ public class learnTheBasics {
         }
         return arr;
     }
+
+
+
+
+
+
+
+    public static List<String> print(List<String> l,int n){
+
+        if(n>0){
+
+        l.add("Coding Ninjas");
+
+        print(l,n-1);
+
+        }
+
+        return l;
+
+    }
+
+    public static List<String> printNtimes(int n){
+
+        List<String> l = new ArrayList<>();
+
+        return print(l,n);
+
+    }
 }
