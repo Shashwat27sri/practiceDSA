@@ -734,4 +734,18 @@ public class learnTheBasics {
         return print(arr , x,0);
 
     }
+
+
+
+
+
+    public static long sumFirstN(long n) {
+        // Write your code here.
+        if (n == 0) {
+            return 0;
+        } else{
+            // Recursive case: sum of first 'n' natural numbers is n + sum of first (n-1) natural numbers
+            return n + sumFirstN(n - 1);
+        }
+    }
 }
