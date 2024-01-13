@@ -665,14 +665,23 @@ public class learnTheBasics {
 
 
 
+    public static int[] print(int arr[], int x){
+        if (x>0){
+            arr[x-1] = x;
+            print(arr, x-1);
+        }
+        return arr;
+    }
     public static int[] printNos(int x) {
         // Write Your Code Here
         int arr[]=new int[x];
-        for(int i = 0 ;i < x;i++){
-            arr[i] = i+1;
+        // for(int i = 0 ;i < x;i++){
+        //     arr[i] = i+1;
 
-        }
-        return arr;
+        // }
+        // return arr;
+        return print(arr, x);
+
     }
 
 
