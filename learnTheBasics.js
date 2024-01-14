@@ -748,4 +748,38 @@ public class learnTheBasics {
             return n + sumFirstN(n - 1);
         }
     }
+
+
+
+
+    // factorial recursion
+
+    public static long fact(long n ){
+        if (n==1){
+            return 1;
+        }
+        return (n * fact(n-1));
+
+    }
+    
+    public static List<Long> factorialNumbers(long n) {
+        
+        List<Long> l =  new ArrayList<>();
+        if ( n ==1 ){
+            l.add(n);
+            return l;
+        }else{
+            for (int i = 1;i<=n;i++){
+                long fact = fact(i);
+                if (fact <= n){
+                    l.add(fact);
+
+                }else{
+                    break; 
+                }
+            }
+        }
+        return l;
+
+    }
 }
