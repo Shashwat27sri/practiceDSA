@@ -782,4 +782,27 @@ public class learnTheBasics {
         return l;
 
     }
+
+
+
+
+
+
+
+    // reverse an array
+    public static int[] reverseArray(int n, int []nums) {
+        
+        revArray(nums,0, n-1);
+        return nums;
+
+    }
+    public static void revArray(int [] nums, int start, int end){
+        if(start<end){
+            // swapping... 
+            int temp=nums[start];
+            nums[start]=nums[end];
+            nums[end]=temp;
+            revArray(nums, start+1, end-1);
+        }
+    }
 }
