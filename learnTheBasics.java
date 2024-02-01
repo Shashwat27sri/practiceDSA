@@ -855,4 +855,33 @@ public class learnTheBasics {
         return true;
     }
 
+
+
+
+    //fibonnacci series
+    public static int[] generateFibonacciNumbers(int n) {
+
+    // Write your code here.
+
+        int[] arr = new int[n];
+
+        fibonacciNums(0,arr,n);
+
+        return arr;
+    }
+
+    private static int[] fibonacciNums(int i,int[] arr,int n){
+
+        if(n>0){
+            if(i>1){
+                arr[i] = arr[i-1]+arr[i-2];
+            }else if(i==0){
+                arr[i] = i;
+            }else if(i==1){
+                arr[i] = i;
+            }
+            fibonacciNums(i+1,arr,n-1);
+        }
+        return arr;
+    }
 }
