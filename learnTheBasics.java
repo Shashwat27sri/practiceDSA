@@ -805,4 +805,29 @@ public class learnTheBasics {
             revArray(nums, start+1, end-1);
         }
     }
+
+
+
+
+
+    // palindrom using recursion 
+    
+    public static boolean isPalindrome(String str) {
+        // Write your code here.
+        int n = str.length();
+
+        return check(str, 0 , n);
+    }
+    public static boolean check(String str, int i, int n){
+        if (i>=n/2){
+            return true;
+
+        }
+        if (str.charAt(i)!=str.charAt(n-i-1)){
+            return false;
+        }
+        return check(str,i+1,n);
+    }
+
+
 }
