@@ -900,4 +900,66 @@ public class learnTheBasics {
         }
         return hash;
     }
+
+
+
+
+
+
+    // get frequency of highest and lowest element count hashing 
+    public static int[] getFrequencies(int[] v) {
+
+        int[] res = new int[2];
+        
+        int len = v.length;
+
+        int maxNum = Integer.MIN_VALUE, maxCount = Integer.MIN_VALUE;
+        int minNum = Integer.MAX_VALUE, minCount = Integer.MAX_VALUE;
+
+        HashMap<Integer,Integer> map = new HashMap<>();
+
+        for(int i=0;i<len;i++){
+            int num = v[i];
+    
+            if(map.containsKey(num)){
+                int count = map.get(num);
+                map.put(num,count+1);
+            }else{
+                map.put(v[i],1);
+            }
+        }
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            Integer key = entry.getKey();
+            Integer count = entry.getValue();
+
+            // System.out.print("Key => "+key+":"+"Value => "+count);
+
+            if(maxCount < count){
+                maxCount = count;
+                maxNum = key;
+            }else if(maxCount == count){
+                if(maxNum > key){
+                    maxNum = key;
+                }
+            }
+
+            if(minCount > count){
+                minCount = count;
+                minNum = key; 
+            }else if(minCount == count){
+                if(minNum > key){
+                    minNum = key;
+                }
+            }
+            // System.out.println();
+        }
+
+        
+        res[0]=maxNum;
+        res[1]=minNum;
+
+        return res;
+    }
+
 }
