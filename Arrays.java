@@ -81,4 +81,22 @@ public class Solution {
         return isSorted( n - 1,a);
     
     }
+
+
+
+
+    // remove dulicates 
+    public static int removeDuplicates(int[] arr,int n) {
+
+        //USING TwO POINTER APPROACH
+
+        int i=0;
+        for(int j=1;j<n;j++){
+            if(arr[i] != arr[j]){
+                i++;
+                arr[i] = arr[j];
+            }
+        }
+        return i+1;
+    }
 }
