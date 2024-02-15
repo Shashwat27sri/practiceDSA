@@ -141,6 +141,26 @@ public class Solution {
     }
 
 
+    // rotate array by D steps
+
+    public static ArrayList<Integer> rotateArray(ArrayList<Integer> arr, int k) {
+
+        // Write your code here.
+
+        for(int i=1;i<=k;i++){
+
+            int x=arr.get(0);
+
+            arr.remove(0);
+
+            arr.add(x);
+
+        }
+
+        return arr;
+
+    }
+
 
 
 
