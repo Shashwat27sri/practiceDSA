@@ -174,4 +174,76 @@ public class Solution {
         }
         return -1;
     }
+
+
+
+
+    // merge 2 sorted array
+    public static List< Integer > sortedArray(int []a, int []b) {
+
+        // Write your code here
+
+        int n1 = a.length;
+
+        int n2 = b.length;
+
+        List<Integer> unionArray = new ArrayList<>();
+
+        int i=0,j=0;
+
+        while (i<n1 && j<n2){
+
+            if(a[i]<=b[j]){
+
+                if(unionArray.size()==0||unionArray.get(unionArray.size() - 1)!=a[i]){
+
+                    unionArray.add(a[i]);
+
+                }
+
+                i++;
+
+            }
+
+            else{
+
+                if(unionArray.size()==0||unionArray.get(unionArray.size() - 1)!=b[j]){
+
+                    unionArray.add(b[j]);
+
+                }
+
+                j++;
+
+            }
+
+        }
+
+        while (j<n2){
+
+            if(unionArray.size()==0||unionArray.get(unionArray.size() - 1)!=b[j]){
+
+                unionArray.add(b[j]);
+
+            }
+
+            j++;
+
+        }
+
+        while (i<n1){
+
+            if(unionArray.size()==0||unionArray.get(unionArray.size() - 1)!=a[i]){
+
+                unionArray.add(a[i]);
+
+            }
+
+            i++;
+
+        }
+
+        return unionArray;
+
+    }
 }
