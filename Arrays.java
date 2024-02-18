@@ -261,4 +261,56 @@ public class Solution {
         }
         return (int) (actualSum - sum);
     }
+
+
+
+
+
+    // most consecutive number
+
+     public static int traffic(int n, int m, int []vehicle) {
+
+        // Write your code here.
+
+        int beg = 0;
+
+        int result = 0;
+
+ 
+
+        for (int i = 0; i < n; i++) {
+
+            if (vehicle[i] == 0) {
+
+                if (m > 0) {
+
+                    m--; // Use a flip as the current light is red
+
+                    result = Math.max(result, i - beg + 1); // Update the result
+
+                } else {
+
+                    while (vehicle[beg] != 0) {
+
+                        beg++;
+
+                    }
+
+                    beg++; // Move the beginning pointer one step forward
+
+                }
+
+            } else {
+
+                result = Math.max(result, i - beg + 1); // Update the result for green light
+
+            }
+
+        }
+
+ 
+
+        return result;    
+
+    }
 }
